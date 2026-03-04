@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rushikesh Punekar — Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Rushikesh Punekar — BCA Student & Aspiring Full-Stack Developer. Data Analysis, Web Development, and more." />
+  <meta name="theme-color" content="#0F0F0F" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ========== 3D SPLINE BACKGROUND ========== -->
+  <div class="spline-bg" id="splineBg" aria-hidden="true"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">RP</a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <button class="nav__burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__content reveal">
+      <h1 class="hero__headline">
+        <span class="hero__line">Rushikesh</span>
+        <span class="hero__line hero__line--gold">Portfolio.</span>
+      </h1>
+      <p class="hero__subtext">
+        Hi, I'm <strong>Rushikesh Punekar</strong> —<br />
+        BCA Student &amp; Aspiring Full-Stack Developer.
+      </p>
+      <a href="#projects" class="hero__cta">
+        View My Work
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <div class="about__grid">
+        <div class="about__image-wrap reveal">
+          <div class="about__image-frame">
+            <img src="assets/images/profile.jpg" alt="Rushikesh Punekar" class="about__image" loading="lazy" width="320"
+              height="320" />
+          </div>
+        </div>
+        <div class="about__content reveal">
+          <p class="about__text">
+            I'm Rushikesh Punekar, a passionate BCA student with an insatiable curiosity for technology and a
+            drive to create meaningful digital experiences. Currently honing my skills in full-stack development,
+            I thrive at the intersection of creativity and logic — building solutions that are as elegant as
+            they are functional.
+          </p>
+          <p class="about__text">
+            From data analysis dashboards to interactive web applications, I love turning complex problems
+            into clean, intuitive interfaces. My journey in tech has equipped me with a strong foundation
+            in programming fundamentals, analytical thinking, and a relentless desire to learn and grow.
+          </p>
+          <p class="about__text">
+            When I'm not coding, you'll find me exploring new technologies, analyzing datasets for hidden
+            insights, or designing interfaces that make people's lives easier.
+          </p>
+          <div class="about__skills">
+            <span class="skill-pill">Data Analysis</span>
+            <span class="skill-pill">Excel</span>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">C</span>
+            <span class="skill-pill">C++</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Projects</h2>
+
+      <!-- Featured Project -->
+      <div class="project-card project-card--featured reveal">
+        <span class="project-card__badge">⭐ Featured</span>
+        <div class="project-card__inner">
+          <div class="project-card__preview">
+            <img src="assets/images/dashboredpreview.jpg" alt="Sales Data Analysis Dashboard Preview" loading="lazy"
+              width="600" height="340" />
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Sales Data Analysis Dashboard</h3>
+            <p class="project-card__desc">
+              Comprehensive sales data analysis built with Excel, featuring interactive charts,
+              KPI tracking, monthly revenue breakdowns, and category-wise performance metrics
+              for data-driven decision making.
+            </p>
+            <div class="project-card__actions">
+              <button class="btn btn--outline" id="viewPreviewBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                View Preview
+              </button>
+              <a href="assets/files/dashbored-rushikesh-punekar.xlsx" download class="btn btn--gold">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Excel
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Projects Grid -->
+      <div class="projects__grid">
+        <div class="project-card project-card--mini reveal">
+          <div class="project-card__icon">📊</div>
+          <h3 class="project-card__title">Student Result Management System</h3>
+          <p class="project-card__desc">Automated system for managing and tracking student academic results with
+            efficient data handling.</p>
+        </div>
+        <div class="project-card project-card--mini reveal">
+          <div class="project-card__icon">🌐</div>
+          <h3 class="project-card__title">Personal Portfolio Website</h3>
+          <p class="project-card__desc">A responsive, modern portfolio website showcasing projects and skills with clean
+            design.</p>
+        </div>
+        <a href="assets/files/calculator.html" target="_blank" class="project-card project-card--mini reveal"
+          style="display: block;">
+          <div class="project-card__icon">🧮</div>
+          <h3 class="project-card__title">Calculator App</h3>
+          <p class="project-card__desc">Feature-rich calculator application with an intuitive interface and accurate
+            computations.</p>
+        </a>
+        <div class="project-card project-card--mini reveal">
+          <div class="project-card__icon">✅</div>
+          <h3 class="project-card__title">Mini To-Do App</h3>
+          <p class="project-card__desc">Lightweight task management application with add, edit, delete, and completion
+            tracking.</p>
+        </div>
+        <div class="project-card project-card--mini reveal">
+          <div class="project-card__icon">📦</div>
+          <h3 class="project-card__title">Inventory Tracker</h3>
+          <p class="project-card__desc">Streamlined inventory management tool for tracking stock levels and product
+            information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <p class="contact__text reveal">
+        Interested in collaborating or have a question? Feel free to reach out — I'd love to connect!
+      </p>
+      <a href="mailto:rushikeshpunekar@example.com" class="hero__cta reveal" style="display:inline-flex;">
+        Say Hello
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>&copy; 2026 Rushikesh Punekar. Crafted with precision.</p>
+  </footer>
+
+  <!-- ========== PREVIEW MODAL ========== -->
+  <div class="modal" id="previewModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" aria-label="Close preview">&times;</button>
+      <img src="assets/images/dashboredpreview.jpg" alt="Dashboard Preview Full" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- ========== MUSIC TOGGLE ========== -->
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle background music">
+    <svg class="music-toggle__icon music-toggle__icon--play" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
+      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </svg>
+    <svg class="music-toggle__icon music-toggle__icon--pause" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
+      <rect x="6" y="4" width="4" height="16"></rect>
+      <rect x="14" y="4" width="4" height="16"></rect>
+    </svg>
+  </button>
+  <audio id="bgMusic" preload="none" loop>
+    <source src="assets/audio/background-music.mp4" type="audio/mp4" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
