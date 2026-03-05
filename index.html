@@ -18,7 +18,11 @@
 <body>
 
   <!-- ========== 3D SPLINE BACKGROUND ========== -->
-  <div class="spline-bg" id="splineBg" aria-hidden="true"></div>
+  <div class="spline-bg" id="splineBg" aria-hidden="true">
+    <iframe src='https://my.spline.design/f12025szferraribolid-w9k1m25hCspJIAdtPYdnxAeL/' frameborder='0' width='100%'
+      height='100%' loading='lazy' allow='autoplay; camera; microphone; geolocation; xr-spatial-tracking'
+      title='3D Spline Background'></iframe>
+  </div>
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav" id="nav">
@@ -26,6 +30,7 @@
     <ul class="nav__links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -56,6 +61,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -63,10 +69,7 @@
   <!-- ========== HERO SECTION ========== -->
   <section class="hero" id="hero">
     <div class="hero__content reveal">
-      <h1 class="hero__headline">
-        <span class="hero__line">Rushikesh</span>
-        <span class="hero__line hero__line--gold">Portfolio.</span>
-      </h1>
+
       <p class="hero__subtext">
         Hi, I'm <strong>Rushikesh Punekar</strong> —<br />
         BCA Student &amp; Aspiring Full-Stack Developer.
@@ -118,6 +121,7 @@
             <span class="skill-pill">HTML</span>
             <span class="skill-pill">C</span>
             <span class="skill-pill">C++</span>
+            <span class="skill-pill">Python</span>
           </div>
         </div>
       </div>
@@ -167,18 +171,6 @@
 
       <!-- Other Projects Grid -->
       <div class="projects__grid">
-        <div class="project-card project-card--mini reveal">
-          <div class="project-card__icon">📊</div>
-          <h3 class="project-card__title">Student Result Management System</h3>
-          <p class="project-card__desc">Automated system for managing and tracking student academic results with
-            efficient data handling.</p>
-        </div>
-        <div class="project-card project-card--mini reveal">
-          <div class="project-card__icon">🌐</div>
-          <h3 class="project-card__title">Personal Portfolio Website</h3>
-          <p class="project-card__desc">A responsive, modern portfolio website showcasing projects and skills with clean
-            design.</p>
-        </div>
         <a href="assets/files/calculator.html" target="_blank" class="project-card project-card--mini reveal"
           style="display: block;">
           <div class="project-card__icon">🧮</div>
@@ -186,18 +178,77 @@
           <p class="project-card__desc">Feature-rich calculator application with an intuitive interface and accurate
             computations.</p>
         </a>
-        <div class="project-card project-card--mini reveal">
-          <div class="project-card__icon">✅</div>
-          <h3 class="project-card__title">Mini To-Do App</h3>
-          <p class="project-card__desc">Lightweight task management application with add, edit, delete, and completion
-            tracking.</p>
-        </div>
-        <div class="project-card project-card--mini reveal">
-          <div class="project-card__icon">📦</div>
-          <h3 class="project-card__title">Inventory Tracker</h3>
-          <p class="project-card__desc">Streamlined inventory management tool for tracking stock levels and product
-            information.</p>
-        </div>
+        <a href="assets/files/python-projects/number_guessing_game.py" download
+          class="project-card project-card--mini reveal" style="display: block;">
+          <div class="project-card__icon">🎲</div>
+          <h3 class="project-card__title">Number Guessing Game</h3>
+          <p class="project-card__desc">Terminal game — guess a random number between 1 and 100 with hints and limited
+            attempts. Python.</p>
+        </a>
+        <a href="assets/files/python-projects/password_generator.py" download
+          class="project-card project-card--mini reveal" style="display: block;">
+          <div class="project-card__icon">🔐</div>
+          <h3 class="project-card__title">Password Generator</h3>
+          <p class="project-card__desc">Generate secure random passwords with customizable length and character options.
+            Python.</p>
+        </a>
+        <a href="assets/files/python-projects/quiz_app.py" download class="project-card project-card--mini reveal"
+          style="display: block;">
+          <div class="project-card__icon">🧠</div>
+          <h3 class="project-card__title">Quiz App</h3>
+          <p class="project-card__desc">Multiple-choice quiz with 10 questions, score tracking, and performance grading.
+            Python.</p>
+        </a>
+        <a href="assets/files/python-projects/weather_app.py" download class="project-card project-card--mini reveal"
+          style="display: block;">
+          <div class="project-card__icon">🌤️</div>
+          <h3 class="project-card__title">Weather Lookup (CLI)</h3>
+          <p class="project-card__desc">Simulated weather lookup tool with mock data for 12 cities worldwide. Python.
+          </p>
+        </a>
+        <a href="assets/files/python-projects/countdown_timer.py" download
+          class="project-card project-card--mini reveal" style="display: block;">
+          <div class="project-card__icon">⏱️</div>
+          <h3 class="project-card__title">Countdown Timer</h3>
+          <p class="project-card__desc">Real-time terminal countdown timer with customizable minutes and seconds input.
+            Python.</p>
+        </a>
+        <a href="assets/files/python-projects/rock_paper_scissors.py" download
+          class="project-card project-card--mini reveal" style="display: block;">
+          <div class="project-card__icon">✊</div>
+          <h3 class="project-card__title">Rock Paper Scissors</h3>
+          <p class="project-card__desc">Classic game vs the computer with running score and final scoreboard. Python.
+          </p>
+        </a>
+        <a href="assets/files/python-projects/word_counter.py" download class="project-card project-card--mini reveal"
+          style="display: block;">
+          <div class="project-card__icon">📝</div>
+          <h3 class="project-card__title">Word Counter Tool</h3>
+          <p class="project-card__desc">Analyze text for word count, character count, sentence count, and word
+            frequency. Python.</p>
+        </a>
+        <a href="assets/files/python-projects/expense_tracker.py" download
+          class="project-card project-card--mini reveal" style="display: block;">
+          <div class="project-card__icon">💰</div>
+          <h3 class="project-card__title">Expense Tracker</h3>
+          <p class="project-card__desc">Track daily expenses with categories, view totals, and see category-wise summary
+            breakdown. Python.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS SECTION ========== -->
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <h2 class="section-title reveal">Achievements</h2>
+      <div class="projects__grid">
+        <!-- Add your achievements here using project-card--mini -->
+        <a href="#" class="project-card project-card--mini reveal" style="display: block;">
+          <div class="project-card__icon">🏆</div>
+          <h3 class="project-card__title">Placeholder Achievement</h3>
+          <p class="project-card__desc">Description of the achievement will go here. You can update this later.</p>
+        </a>
       </div>
     </div>
   </section>

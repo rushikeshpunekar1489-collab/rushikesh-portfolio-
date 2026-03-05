@@ -17,9 +17,6 @@
   const modalClose = document.getElementById('modalClose');
   const splineBg = document.getElementById('splineBg');
 
-  // ---- Constants ----
-  const SPLINE_URL = 'https://my.spline.design/f12025szferraribolid-uh450ROqJbX0axdlwqf4fDnq/';
-
   // ===========================================================
   // THEME SYSTEM
   // ===========================================================
@@ -61,28 +58,7 @@
     });
   });
 
-  // ===========================================================
-  // SPLINE 3D BACKGROUND (Lazy Load)
-  // ===========================================================
-  function loadSpline() {
-    // Skip on mobile with prefers-reduced-motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const iframe = document.createElement('iframe');
-    iframe.src = SPLINE_URL;
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('loading', 'lazy');
-    iframe.setAttribute('title', '3D Ferrari Background');
-    iframe.setAttribute('allow', 'autoplay');
-    splineBg.appendChild(iframe);
-  }
-
-  // Load Spline after page is interactive
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadSpline, { timeout: 3000 });
-  } else {
-    setTimeout(loadSpline, 1500);
-  }
+  // (Spline iframe is now loaded directly in HTML)
 
   // ===========================================================
   // BACKGROUND MUSIC SYSTEM

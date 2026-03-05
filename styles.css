@@ -107,7 +107,8 @@ button {
   position: fixed;
   inset: 0;
   z-index: -2;
-  pointer-events: none;
+  pointer-events: auto;
+  /* Allow interaction with the 3D scene */
   overflow: hidden;
 }
 
@@ -333,14 +334,16 @@ button {
 
 .hero__subtext {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.85);
+  /* Always white */
   margin-bottom: 40px;
   font-weight: 300;
   line-height: 1.8;
 }
 
 .hero__subtext strong {
-  color: var(--text);
+  color: #ffffff;
+  /* Always white */
   font-weight: 600;
 }
 
@@ -539,6 +542,23 @@ button {
 }
 
 .projects::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: 0.92;
+  z-index: -1;
+}
+
+/* ===========================================================
+   ACHIEVEMENTS SECTION
+   =========================================================== */
+.achievements {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.achievements::before {
   content: '';
   position: absolute;
   inset: 0;
