@@ -1,11 +1,11 @@
 /* ===========================================================
-   FERRARI-THEMED PORTFOLIO — SCRIPT
+   RUSHIKESH PUNEKAR — PORTFOLIO SCRIPT
    =========================================================== */
 
 (function () {
   'use strict';
 
-  // ---- DOM Refs ----
+  // ---- DOM ----
   const html = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
   const navBurger = document.getElementById('navBurger');
@@ -15,33 +15,54 @@
   const viewPreviewBtn = document.getElementById('viewPreviewBtn');
   const previewModal = document.getElementById('previewModal');
   const modalClose = document.getElementById('modalClose');
-  const splineBg = document.getElementById('splineBg');
+  const nav = document.getElementById('nav');
+
+  // ===========================================================
+  // PROJECTS TRACK TIMELINE ANIMATION
+  // ===========================================================
+  const trackTimeline = document.querySelector('.track-timeline');
+  const trackProgress = document.getElementById('trackProgress');
+
+  if (trackTimeline && trackProgress) {
+    window.addEventListener('scroll', () => {
+      // Calculate how far we've scrolled into the track timeline
+      const rect = trackTimeline.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // We want the line to start growing when the top of the track enters the bottom half of the screen
+      // and finish when the bottom of the track is near the middle of the screen
+      const totalPath = rect.height;
+      const scrolled = windowHeight / 1.5 - rect.top;
+
+      let percentage = (scrolled / totalPath) * 100;
+
+      // Clamp between 0 and 100
+      percentage = Math.max(0, Math.min(100, percentage));
+
+      trackProgress.style.height = percentage + '%';
+    });
+  }
 
   // ===========================================================
   // THEME SYSTEM
   // ===========================================================
-  function getStoredTheme() {
-    return localStorage.getItem('rp-theme') || 'dark';
-  }
+  function getStoredTheme() { return localStorage.getItem('rp-theme') || 'dark'; }
 
   function setTheme(theme) {
     html.setAttribute('data-theme', theme);
     localStorage.setItem('rp-theme', theme);
-    // Update meta theme-color
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0F0F0F' : '#F9F8F4');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0a0a0f' : '#f4f5fa');
   }
 
-  // Initialize theme (no flash)
   setTheme(getStoredTheme());
 
   themeToggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    setTheme(current === 'dark' ? 'light' : 'dark');
+    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
   // ===========================================================
-  // MOBILE NAVIGATION
+  // MOBILE NAV
   // ===========================================================
   navBurger.addEventListener('click', () => {
     navBurger.classList.toggle('active');
@@ -49,7 +70,6 @@
     document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
   });
 
-  // Close mobile menu on link click
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navBurger.classList.remove('active');
@@ -58,141 +78,205 @@
     });
   });
 
-  // (Spline iframe is now loaded directly in HTML)
+  // ===========================================================
+  // HOTSPOT INTERACTIONS
+  // ===========================================================
+  document.querySelectorAll('.hotspot').forEach(spot => {
+    spot.addEventListener('click', () => {
+      const target = spot.getAttribute('data-target');
+      if (target) {
+        const el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 
   // ===========================================================
-  // BACKGROUND MUSIC SYSTEM
+  // BACKGROUND MUSIC
   // ===========================================================
-  const MAX_VOLUME = 0.45;
-  const FADE_STEP = 0.005;
-  const FADE_INTERVAL = 30;
+  const MUSIC_VOLUME = 0.15;
+  let musicPlaying = false;
 
-  let isPlaying = false;
-  let fadeTimer = null;
-  let musicLoaded = false;
-
-  function loadMusic() {
-    if (!musicLoaded) {
-      bgMusic.load();
-      musicLoaded = true;
-    }
-  }
-
-  function fadeIn() {
-    clearInterval(fadeTimer);
-    bgMusic.volume = 0;
+  // Attempt autoplay
+  function tryAutoplay() {
+    bgMusic.volume = MUSIC_VOLUME;
     bgMusic.play().then(() => {
-      fadeTimer = setInterval(() => {
-        if (bgMusic.volume < MAX_VOLUME - FADE_STEP) {
-          bgMusic.volume = Math.min(bgMusic.volume + FADE_STEP, MAX_VOLUME);
-        } else {
-          bgMusic.volume = MAX_VOLUME;
-          clearInterval(fadeTimer);
-        }
-      }, FADE_INTERVAL);
+      musicPlaying = true;
+      musicToggle.classList.add('playing');
     }).catch(() => {
-      // Autoplay blocked — silently fail
+      // Autoplay blocked — user interaction needed
+      musicPlaying = false;
     });
   }
 
-  function fadeOut() {
-    clearInterval(fadeTimer);
-    fadeTimer = setInterval(() => {
-      if (bgMusic.volume > FADE_STEP) {
-        bgMusic.volume = Math.max(bgMusic.volume - FADE_STEP, 0);
-      } else {
-        bgMusic.volume = 0;
-        bgMusic.pause();
-        clearInterval(fadeTimer);
-      }
-    }, FADE_INTERVAL);
+  // Try autoplay on first user interaction as fallback
+  function onFirstInteraction() {
+    if (!musicPlaying) {
+      tryAutoplay();
+    }
+    document.removeEventListener('click', onFirstInteraction);
+    document.removeEventListener('touchstart', onFirstInteraction);
   }
 
-  musicToggle.addEventListener('click', () => {
-    loadMusic();
-    if (isPlaying) {
-      fadeOut();
-      isPlaying = false;
-      musicToggle.classList.remove('playing');
-      localStorage.setItem('rp-music', 'paused');
-    } else {
-      fadeIn();
-      isPlaying = true;
-      musicToggle.classList.add('playing');
-      localStorage.setItem('rp-music', 'playing');
-    }
+  document.addEventListener('click', onFirstInteraction, { once: true });
+  document.addEventListener('touchstart', onFirstInteraction, { once: true });
+
+  // Try immediate autoplay
+  window.addEventListener('load', () => {
+    tryAutoplay();
   });
 
-  // Pause music when tab is not visible
-  document.addEventListener('visibilitychange', () => {
-    if (!isPlaying) return;
-    if (document.hidden) {
+  musicToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Don't trigger first interaction handler
+    if (musicPlaying) {
       bgMusic.pause();
+      musicPlaying = false;
+      musicToggle.classList.remove('playing');
     } else {
-      bgMusic.play().catch(() => { });
+      bgMusic.volume = MUSIC_VOLUME;
+      bgMusic.play().then(() => {
+        musicPlaying = true;
+        musicToggle.classList.add('playing');
+      }).catch(() => { });
     }
   });
 
-  // ===========================================================
-  // IMAGE PREVIEW MODAL
-  // ===========================================================
-  viewPreviewBtn.addEventListener('click', () => {
-    previewModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  // Pause when tab hidden
+  document.addEventListener('visibilitychange', () => {
+    if (!musicPlaying) return;
+    if (document.hidden) bgMusic.pause();
+    else bgMusic.play().catch(() => { });
   });
+
+  // ===========================================================
+  // PREVIEW MODAL
+  // ===========================================================
+  if (viewPreviewBtn) {
+    viewPreviewBtn.addEventListener('click', () => {
+      previewModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
   function closeModal() {
     previewModal.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  modalClose.addEventListener('click', closeModal);
-  previewModal.querySelector('.modal__overlay').addEventListener('click', closeModal);
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (previewModal) {
+    const overlay = previewModal.querySelector('.modal__overlay');
+    if (overlay) overlay.addEventListener('click', closeModal);
+  }
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && previewModal.classList.contains('active')) {
-      closeModal();
-    }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && previewModal.classList.contains('active')) closeModal();
   });
 
   // ===========================================================
-  // SCROLL REVEAL (IntersectionObserver)
+  // SCROLL REVEAL
   // ===========================================================
   const reveals = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
-    );
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    reveals.forEach((el) => observer.observe(el));
+    reveals.forEach(el => revealObs.observe(el));
   } else {
-    // Fallback: show everything
-    reveals.forEach((el) => el.classList.add('visible'));
+    reveals.forEach(el => el.classList.add('visible'));
+  }
+
+  // ===========================================================
+  // DASHBOARD DIAL ANIMATION
+  // ===========================================================
+  const dialProgressBars = document.querySelectorAll('.dial-progress');
+  const circumference = 251.2;
+
+  function animateDial(dial) {
+    const rawPct = dial.getAttribute('data-pct');
+    const targetPct = parseInt(rawPct, 10);
+    const targetOffset = circumference - (circumference * (targetPct / 100));
+
+    // Set offset variable for CSS transition
+    dial.style.setProperty('--target-offset', targetOffset);
+    dial.classList.add('animate');
+
+    // Number counter animation
+    const contentWrap = dial.closest('.dial-svg-wrap').querySelector('.dial-pct');
+    let current = 0;
+    const duration = 1500; // ms
+    const stepTime = Math.abs(Math.floor(duration / targetPct));
+
+    const timer = setInterval(() => {
+      current += 1;
+      contentWrap.textContent = current + '%';
+      if (current >= targetPct) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
+
+  if ('IntersectionObserver' in window) {
+    const dialObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateDial(entry.target);
+          dialObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    dialProgressBars.forEach(dial => dialObs.observe(dial));
+  } else {
+    dialProgressBars.forEach(dial => animateDial(dial));
   }
 
   // ===========================================================
   // NAV SCROLL SHADOW
   // ===========================================================
-  const nav = document.getElementById('nav');
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 80) {
-      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,.18)';
     } else {
       nav.style.boxShadow = 'none';
     }
-    lastScroll = scrollY;
   }, { passive: true });
+
+  // ===========================================================
+  // BACKGROUND VIDEO SCROLL LOGIC
+  // ===========================================================
+  const bgVideo = document.getElementById('bgVideo');
+  const sectionsToPlayVideo = document.querySelectorAll('#about, #skills, #projects, #contact');
+
+  if ('IntersectionObserver' in window && bgVideo) {
+    let visibleSections = new Set();
+
+    const videoObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visibleSections.add(entry.target.id);
+        } else {
+          visibleSections.delete(entry.target.id);
+        }
+      });
+
+      if (visibleSections.size > 0) {
+        bgVideo.classList.add('visible');
+        if (bgVideo.paused) bgVideo.play().catch(() => { });
+      } else {
+        bgVideo.classList.remove('visible');
+        if (!bgVideo.paused) bgVideo.pause();
+      }
+    }, { threshold: 0.1 });
+
+    sectionsToPlayVideo.forEach(sec => videoObs.observe(sec));
+  }
 
 })();

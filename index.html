@@ -7,156 +7,274 @@
   <title>Rushikesh Punekar — Developer Portfolio</title>
   <meta name="description"
     content="Portfolio of Rushikesh Punekar — BCA Student & Aspiring Full-Stack Developer. Data Analysis, Web Development, and more." />
-  <meta name="theme-color" content="#0F0F0F" />
+  <meta name="theme-color" content="#0a0a0f" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- ========== 3D SPLINE BACKGROUND ========== -->
-  <div class="spline-bg" id="splineBg" aria-hidden="true">
-    <iframe src='https://my.spline.design/f12025szferraribolid-w9k1m25hCspJIAdtPYdnxAeL/' frameborder='0' width='100%'
-      height='100%' loading='lazy' allow='autoplay; camera; microphone; geolocation; xr-spatial-tracking'
-      title='3D Spline Background'></iframe>
-  </div>
-
-  <!-- ========== NAVIGATION ========== -->
+  <!-- ========== NAVBAR ========== -->
   <nav class="nav" id="nav">
-    <a href="#hero" class="nav__logo">RP</a>
+    <a href="#hero" class="nav__logo">RP<span class="nav__logo-dot">.</span></a>
     <ul class="nav__links">
+      <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-      <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </button>
-    <button class="nav__burger" id="navBurger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav__right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <button class="nav__burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ========== MOBILE MENU ========== -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
+      <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 
   <!-- ========== HERO SECTION ========== -->
   <section class="hero" id="hero">
-    <div class="hero__content reveal">
-
-      <p class="hero__subtext">
-        Hi, I'm <strong>Rushikesh Punekar</strong> —<br />
-        BCA Student &amp; Aspiring Full-Stack Developer.
-      </p>
-      <a href="#projects" class="hero__cta">
-        View My Work
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
+    <!-- 3D Spline Background -->
+    <div class="hero__spline">
+      <iframe src="https://my.spline.design/f12025szferraribolid-w9k1m25hCspJIAdtPYdnxAeL/" frameborder="0" width="100%"
+        height="100%" allow="autoplay; camera; microphone; xr-spatial-tracking" title="3D Ferrari F1 Car"></iframe>
     </div>
-    <div class="hero__scroll-indicator">
-      <div class="hero__scroll-line"></div>
-      <span>Scroll</span>
+
+    <!-- Wheel Hotspots -->
+    <div class="hotspot hotspot--fl" data-target="#about">
+      <div class="hotspot__pulse"></div>
+      <div class="hotspot__popup">
+        <span class="hotspot__icon">👤</span>
+        <span class="hotspot__label">About Me</span>
+      </div>
+    </div>
+    <div class="hotspot hotspot--fr" data-target="#skills">
+      <div class="hotspot__pulse"></div>
+      <div class="hotspot__popup">
+        <span class="hotspot__icon">⚡</span>
+        <span class="hotspot__label">Skills</span>
+      </div>
+    </div>
+    <div class="hotspot hotspot--rl" data-target="#projects">
+      <div class="hotspot__pulse"></div>
+      <div class="hotspot__popup">
+        <span class="hotspot__icon">🚀</span>
+        <span class="hotspot__label">Projects</span>
+      </div>
+    </div>
+    <div class="hotspot hotspot--rr" data-target="#contact">
+      <div class="hotspot__pulse"></div>
+      <div class="hotspot__popup">
+        <span class="hotspot__icon">✉️</span>
+        <span class="hotspot__label">Contact</span>
+      </div>
+    </div>
+
+    <!-- Hero Content Overlay -->
+    <div class="hero__overlay">
+      <div class="hero__content">
+        <p class="hero__tag">BCA Student &amp; Aspiring Developer</p>
+        <h1 class="hero__title">Rushikesh<br /><span class="hero__title--accent">Punekar</span></h1>
+        <p class="hero__sub">Coding · Data Analysis · Technology</p>
+        <a href="#projects" class="btn btn--glow">View My Work
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+      <div class="hero__scroll">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ========== ABOUT SECTION ========== -->
-  <section class="about" id="about">
+  <section class="section about" id="about">
     <div class="container">
-      <h2 class="section-title reveal">About Me</h2>
+      <h2 class="section__title reveal">About Me</h2>
       <div class="about__grid">
-        <div class="about__image-wrap reveal">
-          <div class="about__image-frame">
-            <img src="assets/images/profile.jpg" alt="Rushikesh Punekar" class="about__image" loading="lazy" width="320"
-              height="320" />
+        <div class="about__photo-wrap reveal">
+          <div class="about__photo-ring">
+            <img src="assets/images/profile.jpg.jpeg" alt="Rushikesh Punekar" class="about__photo" loading="lazy"
+              width="300" height="300" />
           </div>
         </div>
-        <div class="about__content reveal">
+        <div class="about__info reveal">
+          <span class="about__badge">BCA Student</span>
           <p class="about__text">
-            I'm Rushikesh Punekar, a passionate BCA student with an insatiable curiosity for technology and a
-            drive to create meaningful digital experiences. Currently honing my skills in full-stack development,
-            I thrive at the intersection of creativity and logic — building solutions that are as elegant as
-            they are functional.
+            Every driver starts somewhere &mdash; this is my <span class="highlight-text">starting grid</span>.
           </p>
           <p class="about__text">
-            From data analysis dashboards to interactive web applications, I love turning complex problems
-            into clean, intuitive interfaces. My journey in tech has equipped me with a strong foundation
-            in programming fundamentals, analytical thinking, and a relentless desire to learn and grow.
+            I'm Rushikesh Punekar, a BCA student currently building a strong foundation in <span
+              class="highlight-text">technology</span> and <span class="highlight-text">software development</span>. I'm
+            learning C, C++, HTML, and Excel while exploring how <span class="highlight-text">logic and
+              creativity</span> can work together to create meaningful digital solutions.
           </p>
           <p class="about__text">
-            When I'm not coding, you'll find me exploring new technologies, analyzing datasets for hidden
-            insights, or designing interfaces that make people's lives easier.
+            My journey in programming has just begun, but like a rookie driver entering <span
+              class="highlight-text">Formula 1</span>, I'm focused on learning fast, improving every lap, and pushing my
+            limits with every project I build.
           </p>
-          <div class="about__skills">
-            <span class="skill-pill">Data Analysis</span>
-            <span class="skill-pill">Excel</span>
-            <span class="skill-pill">HTML</span>
-            <span class="skill-pill">C</span>
-            <span class="skill-pill">C++</span>
-            <span class="skill-pill">Python</span>
+          <p class="about__text">
+            This portfolio is my <span class="highlight-text">pit lane</span> &mdash; a place where I showcase my
+            projects, experiments, and the progress I make as I continue racing toward becoming a skilled developer.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <h2 class="section__title reveal">Skills & Performance</h2>
+      <p class="reveal"
+        style="text-align: center; margin-top: -30px; margin-bottom: 50px; font-size: 1.1rem; color: var(--text-muted);">
+        Every driver needs the right machine. These are the tools powering my journey.
+      </p>
+
+      <div class="dashboard__grid reveal">
+        <!-- Skill 1 -->
+        <div class="dial-card">
+          <div class="dial-svg-wrap">
+            <svg class="dial-svg" viewBox="0 0 100 100">
+              <circle class="dial-bg" cx="50" cy="50" r="40"></circle>
+              <circle class="dial-progress" cx="50" cy="50" r="40" data-pct="70"></circle>
+            </svg>
+            <div class="dial-content">
+              <span class="dial-pct">0%</span>
+            </div>
           </div>
+          <h3 class="dial-title">C Programming</h3>
+          <span class="dial-subtitle">Engine Power</span>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="dial-card">
+          <div class="dial-svg-wrap">
+            <svg class="dial-svg" viewBox="0 0 100 100">
+              <circle class="dial-bg" cx="50" cy="50" r="40"></circle>
+              <circle class="dial-progress" cx="50" cy="50" r="40" data-pct="65"></circle>
+            </svg>
+            <div class="dial-content">
+              <span class="dial-pct">0%</span>
+            </div>
+          </div>
+          <h3 class="dial-title">C++</h3>
+          <span class="dial-subtitle">Acceleration</span>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="dial-card">
+          <div class="dial-svg-wrap">
+            <svg class="dial-svg" viewBox="0 0 100 100">
+              <circle class="dial-bg" cx="50" cy="50" r="40"></circle>
+              <circle class="dial-progress" cx="50" cy="50" r="40" data-pct="80"></circle>
+            </svg>
+            <div class="dial-content">
+              <span class="dial-pct">0%</span>
+            </div>
+          </div>
+          <h3 class="dial-title">HTML</h3>
+          <span class="dial-subtitle">Aerodynamics</span>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="dial-card">
+          <div class="dial-svg-wrap">
+            <svg class="dial-svg" viewBox="0 0 100 100">
+              <circle class="dial-bg" cx="50" cy="50" r="40"></circle>
+              <circle class="dial-progress" cx="50" cy="50" r="40" data-pct="85"></circle>
+            </svg>
+            <div class="dial-content">
+              <span class="dial-pct">0%</span>
+            </div>
+          </div>
+          <h3 class="dial-title">Excel / Data Analysis</h3>
+          <span class="dial-subtitle">Race Strategy</span>
+        </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== PROJECTS SECTION ========== -->
-  <section class="projects" id="projects">
+  <section class="section projects" id="projects">
     <div class="container">
-      <h2 class="section-title reveal">Projects</h2>
+      <h2 class="section__title reveal">Projects From My Development Track</h2>
+      <p class="reveal" style="text-align: center; margin-top: -30px; margin-bottom: 50px; font-size: 1.1rem; color: var(--text-muted);">
+        Every project is a new lap where I learn, experiment, and push my limits as a developer.
+      </p>
 
-      <!-- Featured Project -->
-      <div class="project-card project-card--featured reveal">
-        <span class="project-card__badge">⭐ Featured</span>
-        <div class="project-card__inner">
+      <div class="track-timeline reveal">
+        <div class="track-line">
+          <div class="track-progress" id="trackProgress"></div>
+        </div>
+        <div class="projects__grid">
+        <!-- Project 1 — Dashboard -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
           <div class="project-card__preview">
-            <img src="assets/images/dashboredpreview.jpg" alt="Sales Data Analysis Dashboard Preview" loading="lazy"
-              width="600" height="340" />
+            <img src="assets/images/dashboredpreview.jpg" alt="Sales Data Analysis Dashboard" loading="lazy" />
           </div>
-          <div class="project-card__info">
+          <div class="project-card__body">
+            <span class="project-card__badge">📊 Featured</span>
             <h3 class="project-card__title">Sales Data Analysis Dashboard</h3>
             <p class="project-card__desc">
-              Comprehensive sales data analysis built with Excel, featuring interactive charts,
-              KPI tracking, monthly revenue breakdowns, and category-wise performance metrics
-              for data-driven decision making.
+              Comprehensive sales data analysis built with Excel — revenue analysis, monthly trends, category
+              performance and business KPI insights.
             </p>
+            <ul class="project-card__features">
+              <li>Revenue analysis</li>
+              <li>Monthly trends</li>
+              <li>Category performance</li>
+              <li>Business KPI insights</li>
+            </ul>
             <div class="project-card__actions">
               <button class="btn btn--outline" id="viewPreviewBtn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Preview
+                Preview Dashboard
               </button>
-              <a href="assets/files/dashbored-rushikesh-punekar.xlsx" download class="btn btn--gold">
+              <a href="assets/files/dashbored-rushikesh-punekar.xlsx" download class="btn btn--glow">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
@@ -167,106 +285,325 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
-      <!-- Other Projects Grid -->
-      <div class="projects__grid">
-        <a href="assets/files/calculator.html" target="_blank" class="project-card project-card--mini reveal"
-          style="display: block;">
-          <div class="project-card__icon">🧮</div>
-          <h3 class="project-card__title">Calculator App</h3>
-          <p class="project-card__desc">Feature-rich calculator application with an intuitive interface and accurate
-            computations.</p>
-        </a>
-        <a href="assets/files/python-projects/number_guessing_game.py" download
-          class="project-card project-card--mini reveal" style="display: block;">
-          <div class="project-card__icon">🎲</div>
-          <h3 class="project-card__title">Number Guessing Game</h3>
-          <p class="project-card__desc">Terminal game — guess a random number between 1 and 100 with hints and limited
-            attempts. Python.</p>
-        </a>
-        <a href="assets/files/python-projects/password_generator.py" download
-          class="project-card project-card--mini reveal" style="display: block;">
-          <div class="project-card__icon">🔐</div>
-          <h3 class="project-card__title">Password Generator</h3>
-          <p class="project-card__desc">Generate secure random passwords with customizable length and character options.
-            Python.</p>
-        </a>
-        <a href="assets/files/python-projects/quiz_app.py" download class="project-card project-card--mini reveal"
-          style="display: block;">
-          <div class="project-card__icon">🧠</div>
-          <h3 class="project-card__title">Quiz App</h3>
-          <p class="project-card__desc">Multiple-choice quiz with 10 questions, score tracking, and performance grading.
-            Python.</p>
-        </a>
-        <a href="assets/files/python-projects/weather_app.py" download class="project-card project-card--mini reveal"
-          style="display: block;">
-          <div class="project-card__icon">🌤️</div>
-          <h3 class="project-card__title">Weather Lookup (CLI)</h3>
-          <p class="project-card__desc">Simulated weather lookup tool with mock data for 12 cities worldwide. Python.
-          </p>
-        </a>
-        <a href="assets/files/python-projects/countdown_timer.py" download
-          class="project-card project-card--mini reveal" style="display: block;">
-          <div class="project-card__icon">⏱️</div>
-          <h3 class="project-card__title">Countdown Timer</h3>
-          <p class="project-card__desc">Real-time terminal countdown timer with customizable minutes and seconds input.
-            Python.</p>
-        </a>
-        <a href="assets/files/python-projects/rock_paper_scissors.py" download
-          class="project-card project-card--mini reveal" style="display: block;">
-          <div class="project-card__icon">✊</div>
-          <h3 class="project-card__title">Rock Paper Scissors</h3>
-          <p class="project-card__desc">Classic game vs the computer with running score and final scoreboard. Python.
-          </p>
-        </a>
-        <a href="assets/files/python-projects/word_counter.py" download class="project-card project-card--mini reveal"
-          style="display: block;">
-          <div class="project-card__icon">📝</div>
-          <h3 class="project-card__title">Word Counter Tool</h3>
-          <p class="project-card__desc">Analyze text for word count, character count, sentence count, and word
-            frequency. Python.</p>
-        </a>
-        <a href="assets/files/python-projects/expense_tracker.py" download
-          class="project-card project-card--mini reveal" style="display: block;">
-          <div class="project-card__icon">💰</div>
-          <h3 class="project-card__title">Expense Tracker</h3>
-          <p class="project-card__desc">Track daily expenses with categories, view totals, and see category-wise summary
-            breakdown. Python.</p>
-        </a>
+        <!-- Project 2 — Calculator -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">🧮</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge">⚡ Interactive</span>
+            <h3 class="project-card__title">Smart Calculator Web App</h3>
+            <p class="project-card__desc">
+              Responsive calculator built with HTML, CSS &amp; JavaScript featuring keyboard input support, modern glass
+              UI and smooth button animations.
+            </p>
+            <ul class="project-card__features">
+              <li>Add / Subtract / Multiply / Divide</li>
+              <li>Keyboard input support</li>
+              <li>Modern glass UI design</li>
+              <li>Smooth button animations</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="assets/files/calculator.html" target="_blank" class="btn btn--glow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Live Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 1 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">⏱️</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Countdown Timer</h3>
+            <p class="project-card__desc">A versatile countdown timer built with Python.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/countdown_timer.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 2 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">💰</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Expense Tracker</h3>
+            <p class="project-card__desc">A practical expense tracker tool built with Python.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/expense_tracker.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 3 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">🔢</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Number Guessing Game</h3>
+            <p class="project-card__desc">An interactive number guessing game written in Python.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/number_guessing_game.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 4 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">🔐</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Password Generator</h3>
+            <p class="project-card__desc">A secure and random password generator in Python.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/password_generator.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 5 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">❓</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Quiz App</h3>
+            <p class="project-card__desc">A fun and interactive quiz application built in Python.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/quiz_app.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 6 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">✂️</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Rock Paper Scissors</h3>
+            <p class="project-card__desc">A classic rock-paper-scissors game built with Python.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/rock_paper_scissors.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 7 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">☁️</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Weather App</h3>
+            <p class="project-card__desc">A Python app that fetches and displays weather updates.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/weather_app.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Python Project 8 -->
+        <div class="checkpoint"><div class="checkpoint-dot"></div><div class="project-card reveal">
+          <div class="project-card__preview project-card__preview--calc">
+            <div class="calc-icon">📝</div>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__badge"
+              style="background: linear-gradient(135deg, #3776AB, #ffd43b); color: #fff;">🐍 Python</span>
+            <h3 class="project-card__title">Word Counter</h3>
+            <p class="project-card__desc">A text analysis tool to count words and characters.</p>
+            <div class="project-card__actions">
+              <a href="assets/files/python-projects/word_counter.py" download class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg> View Script
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== ACHIEVEMENTS SECTION ========== -->
-  <section class="achievements" id="achievements">
+  <!-- ========== RESUME SECTION ========== -->
+  <section class="section resume" id="resume">
     <div class="container">
-      <h2 class="section-title reveal">Achievements</h2>
-      <div class="projects__grid">
-        <!-- Add your achievements here using project-card--mini -->
-        <a href="#" class="project-card project-card--mini reveal" style="display: block;">
-          <div class="project-card__icon">🏆</div>
-          <h3 class="project-card__title">Placeholder Achievement</h3>
-          <p class="project-card__desc">Description of the achievement will go here. You can update this later.</p>
+      <h2 class="section__title reveal">Driver Profile</h2>
+      <p class="reveal"
+        style="text-align: center; margin-top: -30px; margin-bottom: 50px; font-size: 1.1rem; color: var(--text-muted);">
+        Every racer needs a profile. Here is my professional overview.
+      </p>
+      <div class="resume__card reveal">
+        <div class="resume__header">
+          <div class="resume__avatar">RP</div>
+          <div>
+            <h3 class="resume__name">Rushikesh Punekar</h3>
+            <span class="resume__role">BCA Student</span>
+          </div>
+        </div>
+        <div class="resume__body">
+          <div class="resume__block">
+            <h4 class="resume__block-title">Education</h4>
+            <p>Bachelor of Computer Applications (BCA) — Currently Pursuing</p>
+          </div>
+          <div class="resume__block">
+            <h4 class="resume__block-title">Skills</h4>
+            <div class="resume__tags">
+              <span>Excel</span><span>HTML</span><span>C</span><span>C++</span><span>Data Analysis</span>
+            </div>
+          </div>
+          <div class="resume__block">
+            <h4 class="resume__block-title">Projects</h4>
+            <ul class="resume__list">
+              <li>Sales Data Analysis Dashboard</li>
+              <li>Smart Calculator Web App</li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="btn btn--glow resume__download" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download Resume
         </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ========== CONTACT SECTION ========== -->
-  <section class="contact" id="contact">
+  <section class="section contact" id="contact">
     <div class="container">
-      <h2 class="section-title reveal">Get In Touch</h2>
-      <p class="contact__text reveal">
-        Interested in collaborating or have a question? Feel free to reach out — I'd love to connect!
-      </p>
-      <a href="mailto:rushikeshpunekar@example.com" class="hero__cta reveal" style="display:inline-flex;">
-        Say Hello
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
+      <h2 class="section__title reveal">Race Control – Contact Me</h2>
+      <p class="reveal"
+        style="text-align: center; margin-top: -30px; margin-bottom: 50px; font-size: 1.1rem; color: var(--text-muted);">
+        Let’s connect and build something great together.</p>
+
+      <div class="contact__grid">
+        <div class="contact__form-wrap reveal">
+          <form class="contact__form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form__group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--glow btn--submit">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact__social reveal">
+          <h3 class="social__title">Direct Contact</h3>
+          <div class="social__links">
+            <a href="mailto:rushikeshpunekar1489@gmail.com" class="social__link">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>rushikeshpunekar1489@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/rushikesh-punekar-3848b2287" target="_blank" class="social__link">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -284,21 +621,29 @@
     </div>
   </div>
 
-  <!-- ========== MUSIC TOGGLE ========== -->
+  <!-- ========== MUSIC CONTROL ========== -->
   <button class="music-toggle" id="musicToggle" aria-label="Toggle background music">
     <svg class="music-toggle__icon music-toggle__icon--play" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2">
-      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
     </svg>
-    <svg class="music-toggle__icon music-toggle__icon--pause" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg class="music-toggle__icon music-toggle__icon--mute" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2">
-      <rect x="6" y="4" width="4" height="16"></rect>
-      <rect x="14" y="4" width="4" height="16"></rect>
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
     </svg>
   </button>
-  <audio id="bgMusic" preload="none" loop>
+  <audio id="bgMusic" preload="auto" loop>
     <source src="assets/audio/background-music.mp4" type="audio/mp4" />
   </audio>
+
+  <!-- ========== BACKGROUND VIDEO ========== -->
+  <video id="bgVideo" class="bg-video" loop muted playsinline preload="auto">
+    <source src="assets/video/project-video.mp4.mp4" type="video/mp4" />
+  </video>
 
   <script src="script.js"></script>
 </body>
